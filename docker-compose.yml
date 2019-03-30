@@ -7,6 +7,8 @@ services:
     volumes:
       - /tmp:/tmp
       - /var/run/docker.sock:/var/run/docker.sock
+      - ./logs:/opt/digdag/logs
+      - ./database:/opt/digdag/database
   client:
     image: digdag
     volumes:
