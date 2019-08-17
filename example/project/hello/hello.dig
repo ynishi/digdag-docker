@@ -1,5 +1,9 @@
 timezone: UTC
 
+_export:
+  docker:
+    image: mysql:5
+
 +setup:
   echo>: start ${session_time}
 
@@ -13,6 +17,9 @@ timezone: UTC
   _do:
     echo>: ${order} ${animal}
   _parallel: true
+
++task:
+  sh>: mysql --version
 
 +teardown:
   echo>: finish ${session_time}
